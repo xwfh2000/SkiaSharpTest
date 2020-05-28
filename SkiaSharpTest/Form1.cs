@@ -33,12 +33,11 @@ namespace SkiaSharpTest
             var info = new SKImageInfo(512, 512);
             using (var surface = SKSurface.Create(info))
             {
+                //now ,can draw sth with canvas
                 SKCanvas canvas = surface.Canvas;
-
                 canvas.Clear(SKColors.White);
 
-               
-
+                //using DrawTextOnPath to draw sth
                 var paint1 = new SKPaint
                 {
                     TextSize = 32.0f,
@@ -51,10 +50,8 @@ namespace SkiaSharpTest
                     Style = SKPaintStyle.Stroke,
                     PathEffect=SKPathEffect.CreateDiscrete(3,1)
                 };
-
                 var path = new SKPath();
                 path.AddArc(new SKRect(100, 100, 300, 300), 225, 90);
-
                 canvas.DrawPath(path, paint2);
                 canvas.DrawTextOnPath("跳-123", path, 0, 0, paint1);
 
@@ -80,15 +77,16 @@ namespace SkiaSharpTest
                 //    }
                 //}
 
-                using (SKPaint textPaint = new SKPaint())
-                using (SKTypeface tf = SKTypeface.FromFamilyName("黑"))
-                {
-                    textPaint.Color = SKColors.Green;
-                    textPaint.IsAntialias = true;
-                    textPaint.TextSize = 48;
-                    textPaint.Typeface = tf;
-                    canvas.DrawText("汉字", 50, 50, textPaint);
-                }
+                ////draw text
+                //using (SKPaint textPaint = new SKPaint())
+                //using (SKTypeface tf = SKTypeface.FromFamilyName("黑"))
+                //{
+                //    textPaint.Color = SKColors.Green;
+                //    textPaint.IsAntialias = true;
+                //    textPaint.TextSize = 48;
+                //    textPaint.Typeface = tf;
+                //    canvas.DrawText("汉字", 50, 50, textPaint);
+                //}
 
                 PBMain.Image = Surface2Bitmap(surface);
 
