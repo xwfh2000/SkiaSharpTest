@@ -37,7 +37,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(333, 390);
+            this.button1.Location = new System.Drawing.Point(344, 605);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 361);
+            this.panel1.Size = new System.Drawing.Size(876, 599);
             this.panel1.TabIndex = 1;
             // 
             // PBMain
@@ -59,7 +59,7 @@
             this.PBMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PBMain.Location = new System.Drawing.Point(0, 0);
             this.PBMain.Name = "PBMain";
-            this.PBMain.Size = new System.Drawing.Size(800, 361);
+            this.PBMain.Size = new System.Drawing.Size(876, 599);
             this.PBMain.TabIndex = 0;
             this.PBMain.TabStop = false;
             // 
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(876, 640);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";

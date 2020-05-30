@@ -28,9 +28,11 @@ namespace SkiaSharpTest
                 return bm;
             }
         }
+
+        
         private void Button1_Click(object sender, EventArgs e)
         {
-            var info = new SKImageInfo(512, 512);
+            var info = new SKImageInfo(1024, 1024);
             using (var surface = SKSurface.Create(info))
             {
                 //now ,can draw sth with canvas
@@ -48,12 +50,32 @@ namespace SkiaSharpTest
                 var paint2 = new SKPaint
                 {
                     Style = SKPaintStyle.Stroke,
-                    PathEffect=SKPathEffect.CreateDiscrete(3,1)
+                    StrokeWidth = 10
+                   // PathEffect=SKPathEffect.CreateDiscrete(3,1)
                 };
+
+                var innerpaint = new SKPaint
+                {
+                    Style = SKPaintStyle.Fill,
+                    Color = new SKColor(0, 255, 0),
+                    // PathEffect=SKPathEffect.CreateDiscrete(3,1)
+                };
+
+                int[] temp = new int[] { 2, 1, 0, 2, 1, 2, 2, 2,0, 0,1,0,2,0,0,1 };
+                var pts = DrawTools.Tools.ints2Pts(temp);
+                var ptsPath = DrawTools.Tools.Points2Path(ref pts,150);
+
                 var path = new SKPath();
-                path.AddArc(new SKRect(100, 100, 300, 300), 225, 90);
-                canvas.DrawPath(path, paint2);
-                canvas.DrawTextOnPath("跳-123", path, 0, 0, paint1);
+                path.AddArc(new SKRect(100, 100, 300, 500), 225, 90);
+                
+                canvas.DrawPath(ptsPath, paint2);
+                canvas.DrawPath(ptsPath, innerpaint);
+                canvas.DrawTextOnPath("11111111111111111111111111111111111111111"+
+                    "222222222222222222222222222222222222222222"+
+                    "333333333333333333333333333333333333333333"+
+                    "444444444444444444444444444444444444444444"+
+                    "555555555555555555555555555555555555555555",
+                    ptsPath, 0, -2, paint1);
 
                 //// configure our brush
                 //var redBrush = new SKPaint
